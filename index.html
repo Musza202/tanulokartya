@@ -16,15 +16,17 @@
         let kimenet =document.getElementById("ki");
         let orszag=["Magyarország","Franciaország","Olaszország","Spanyolország","Kína","Japán"];
         let varos=["Budapest","Párizs","Róma","Madrid","Peking","Tokió"];
-        for(let i = 0;i<orszag.length;i++){
+        
+        function letrehoz(a,b){
             let doboz =document.createElement("div");
-            doboz.innerHTML="Mi "+orszag[i]+" fővárosa? </br>";
+            doboz.innerHTML="Mi "+a+" fővárosa? </br>";
             doboz.style.display="flex";
             doboz.style.flexDirection="column";
             doboz.style.justifyContent="center";
             doboz.style.alignItems="center";
+            
             let rejtett = document.createElement("div");
-            rejtett.innerHTML=varos[i];
+            rejtett.innerHTML=b;
             rejtett.style.fontWeight=400;
             rejtett.style.display="none";
 
@@ -34,11 +36,16 @@
                 if(rejtett.style.display=="none")rejtett.style.display="block";
                 else rejtett.style.display="none";
             })
+
             doboz.appendChild(rejtett);
             doboz.appendChild(gomb);
             kimenet.appendChild(doboz);
-        }
 
+        }
+        for(let i = 0;i<orszag.length;i++){
+            letrehoz(orszag[i],varos[i])
+        }
+        
     </script>
 </body>
 </html> 
