@@ -5,6 +5,11 @@ body{
 }
 #ki{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: center;
+
 }
 #ki>div{
     background-color:bisque;
@@ -13,15 +18,15 @@ body{
     border-radius: 15px;
     text-align: center;
     font-weight: 900;
+    width: 200px;
+    height: 150px;
+}
 
-}
-#ki>div>div{
-    font-weight: 400;
-}
 button{
     background-color: green;
     color: white;
     border: 0px;
     padding: 10px;
     border-radius: 10px;
+    width:100px ;
 }
