@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TanulóKártya</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <h1>TanulóKártya</h1>
+    <div id="ki">
+
+    </div>
+    <script>
+        let kimenet =document.getElementById("ki");
+        let orszag=["Magyarország","Franciaország","Olaszország"];
+        orszag.forEach(element => {
+            let doboz =document.createElement("div");
+            doboz.innerHTML="Mi "+element+" fővárosa? </br>";
+
+            let rejtett = document.createElement("div");
+            rejtett.innerHTML="Budapest";
+            let gomb = document.createElement("button");
+            gomb.textContent="Mutat/Elrejt";
+            gomb.addEventListener('click',function(){
+
+            })
+            doboz.appendChild(rejtett);
+            doboz.appendChild(gomb);
+            kimenet.appendChild(doboz);
+        });
+
+    </script>
 </body>
-</html>
+</html> 
