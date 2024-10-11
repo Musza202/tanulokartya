@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TanulóKártya</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <h1>TanulóKártya</h1>
+    <h2>Főváros</h2>
+    <div id="ki">
+
+    </div>
+    <script>
+        let kimenet =document.getElementById("ki");
+        let orszag=["Magyarország","Franciaország","Olaszország","Spanyolország","Kína","Japán"];
+        let varos=["Budapest","Párizs","Róma","Madrid","Peking","Tokió"];
+        for(let i = 0;i<orszag.length;i++){
+            let doboz =document.createElement("div");
+            doboz.innerHTML="Mi "+orszag[i]+" fővárosa? </br>";
+            doboz.style.display="flex";
+            doboz.style.flexDirection="column";
+            doboz.style.justifyContent="center";
+            doboz.style.alignItems="center";
+            let rejtett = document.createElement("div");
+            rejtett.innerHTML=varos[i];
+            rejtett.style.fontWeight=400;
+            rejtett.style.display="none";
+
+            let gomb = document.createElement("button");
+            gomb.textContent="Mutat/Elrejt";
+            gomb.addEventListener('click',function(){
+                if(rejtett.style.display=="none")rejtett.style.display="block";
+                else rejtett.style.display="none";
+            })
+            doboz.appendChild(rejtett);
+            doboz.appendChild(gomb);
+            kimenet.appendChild(doboz);
+        }
+
+    </script>
 </body>
-</html>
+</html> 
